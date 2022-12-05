@@ -4,16 +4,103 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 use Db\Db;
 
 $base = new Db();
 
-$conn = $base -> getConnect('localhost', 'root', '1', 'smart');
+$connect = $base -> getConnect('localhost', 'root', '1', 'smart');
 
 
 //--------------------------------------  Процедурный стиль -----------------------------------------------------------
 
 $query = "select * from depart where id = 2";
+
+
+
+
+
+$ids = 2;
+
+//$connect=new mysqli($host, $user, $password, $db); // иницилизируем подключение к бд
+
+$query='SELECT * FROM depart WHERE id=?'; // объявляем переменную с запросом
+
+$stmt = $connect->prepare($query); // подготавливаем наш запрос
+
+$stmt->bind_param('i', $ids); // присваеваем первому ? в запросе параметр с типом данных s (string)
+
+$stmt->execute(); // выполняем подготовленный запрос
+
+$result=$stmt->get_result(); // получаем результат из подготовленного запроса
+
+
+$myrow = mysqli_fetch_assoc($result);
+
+echo $myrow['title'];
+
+
+
+//var_dump($result);
+
+$rows=$result->num_rows; // получаем кол-во строк в полученном результате из запроса
+
+
+
+if($rows) { // если строки найдены
+	
+	// такой аккаунт уже найден выводим ошибку;
+	
+} else { // если строки не найдены
+	
+	
+	// аккаунт не найден, регистрируем;
+}
+
+$result->free(); // очищаем результат
+
+$stmt->close(); // закрываем подготовленный запрос
+
+$connect->close(); // закрываем подключение
+
+*/
+
+
+
+
+
+
 
 /*
 $result = mysqli_query($conn, $query);
