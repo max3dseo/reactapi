@@ -11,6 +11,21 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 
 
+$str = " 222 test123  888 froms 909fish- samson good-4real 999";
+
+$pattern = "/[a-z]{1,2}/";
+
+$names = array("Jhon Carter", "Clark Kent", "John Rambo");
+
+$matches = preg_grep($pattern, $names);
+
+// Перебираем массив и отображаем совпадающие имена
+foreach($matches as $match){
+	echo $match . "<br>";
+}
+
+
+
 
 
 
