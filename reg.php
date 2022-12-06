@@ -1,7 +1,7 @@
 <?
 
 
-echo "test from test GITHUB !!!";
+echo "!!! test from test GITHUB !!!";
 
 
 
