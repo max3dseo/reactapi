@@ -4,6 +4,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+exit();
+
+
 //$str  = "test 777 999dxoom asksss-my 33fromse22 real-555-fish 97 229dxxxxx trustssssssssasss coputer";
 
 
